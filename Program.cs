@@ -2,48 +2,68 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-// funktio aliohjelmat
-//basics funktion
 
-namespace CaBasictask
+//Loops practise
+
+namespace CaLoop1
 {
     class Program
     {
         static void Main(string[] args)
         {
-            //for loop
-            //
-            int lap = 10;
-            int total = 0;
 
-            Console.WriteLine("Please give 10 numbers");
+            //N! Program loops task 5!
 
-            for (int i = 1; i <= lap; i++)
+            int number = -1;
+
+            // try catch metod
+            while (number != 0) 
             {
-                
-                Console.WriteLine("Give {0}. number", i);
-                total += int.Parse(Console.ReadLine());
+                try
+                {
+                    Console.Write("Please give positive number exp. 1-150");
+                    Console.WriteLine(" If you want to stop press 0");
 
+                    number = int.Parse(Console.ReadLine());
+
+                    if (number > 150)
+                    {
+                        Console.WriteLine(" Out of range, please give another number ");
+                        continue;
+                    }
+                    if (number < 0)
+                    {
+                        Console.WriteLine("Out of range !!! Number is negative. Please give another number");
+                        continue;
+                    }
+
+                    if (number == -5)
+                    {
+                        Console.WriteLine("ZERO HERO");
+                        continue;
+                    }
+
+                    //factorial math.
+
+                    double factorial = 1;
+                    int i = 1;
+                    while (i <= number)
+                    {
+                        factorial = factorial * i;
+                        i++;
+                    }
+                    if (number != 0) // not equal
+
+                        Console.WriteLine("Number:" +" "+ number +"!"+ "factorial is" +" "+ factorial);
+
+                }
+                catch 
+                {
+                    Console.WriteLine("Wrong input");
+                }
             }
 
-
-
-            Console.WriteLine("Total for your input is" + " " + total);
-
-            ////int[] numbers= new int[]{int.MaxValue};
-            ////int maximumNumber= numbers.Max();
-            ////Console.WriteLine("Highest number is" + " " + numbers.Max());
-            ////Console.ReadLine();
-
-
-            //int[] numbers = { 3, 9, 5 };
-            //int biggestNumber = numbers.Max();
-            //Console.WriteLine(biggestNumber);
-            //Console.ReadLine();
-
-        
-
-
+            
         }
     }
 }
