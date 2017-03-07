@@ -3,30 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-//Loops practise
+//tee ohjelma joka laskee N lukua yhteen, N pitää olla vähintään 1
 
-namespace CaLoop1
+namespace CaLoop2
 {
     class Program
     {
         static void Main(string[] args)
         {
 
-            //N! Program loops task 5!
 
             int number = -1;
 
             // try catch metod
-            while (number != 0) 
+            while (number != 0)
             {
                 try
                 {
-                    Console.Write("Please give positive number exp. 1-150");
-                    Console.WriteLine(" If you want to stop press 0");
+                    Console.WriteLine("Please give positive number. Program gave total result");
+                    Console.WriteLine(" If you want to stop press 0 and Enter");
 
                     number = int.Parse(Console.ReadLine());
 
-                    if (number > 150)
+                    if (number < 0)
                     {
                         Console.WriteLine(" Out of range, please give another number ");
                         continue;
@@ -37,33 +36,29 @@ namespace CaLoop1
                         continue;
                     }
 
-                    if (number == -5)
-                    {
-                        Console.WriteLine("ZERO HERO");
-                        continue;
-                    }
-
+                   
                     //factorial math.
 
-                    double factorial = 1;
+                    double total = 0;
                     int i = 1;
                     while (i <= number)
                     {
-                        factorial = factorial * i;
+                        total = total+ i;
                         i++;
                     }
-                    if (number != 0) // not equal
+                    if (number != 0) // not equal // zero catch to loop and stop program
 
-                        Console.WriteLine("Number:" +" "+ number +"!"+ "factorial is" +" "+ factorial);
+                        Console.WriteLine("Number:" + " " + number + " " + "total" + " " + total);
 
                 }
-                catch 
+                catch
                 {
                     Console.WriteLine("Wrong input");
                 }
             }
 
-            
+
+
         }
     }
 }
