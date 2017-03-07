@@ -2,64 +2,48 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+// funktio aliohjelmat
+//basics funktion
 
-namespace CaNumber2
+namespace CaBasictask
 {
     class Program
     {
         static void Main(string[] args)
         {
-            //PV
-            // Write number. Input example 5 Output "Number 5 is uneven"
+            //for loop
+            //
+            int lap = 10;
+            int total = 0;
 
-            float num = 0;
-            string keyword= string.Empty ;
+            Console.WriteLine("Please give 10 numbers");
 
-            Console.WriteLine(" Please give type number. ");
-            Console.WriteLine("Program check it is positive or nergative and even or unven");
-           
-            bool result =float.TryParse(Console.ReadLine(), out num);
-
-
-
-            if (!result) 
+            for (int i = 1; i <= lap; i++)
             {
-                keyword = ("It is not a number");
-              
-            }
-
-
-            if (num > 0)
-            {
-                Console.WriteLine("Number" + " " + num + " is positive");
-                Console.ReadLine();
-               
-            }
-
-            else if( num % 2 ==0)
-            {
-                keyword = "Number is" + num.ToString() +"even number";
-               
-            }
-
-            if (num < 0)
-            {
-                Console.WriteLine("Number" + " " + num + " is negative");
-                Console.ReadLine();
                 
+                Console.WriteLine("Give {0}. number", i);
+                total += int.Parse(Console.ReadLine());
+
             }
 
 
-            if (num % 2 == 1) 
-            {
-                keyword = "Number is" + num.ToString() + "uneven number";
-               
-            }
 
-            Console.WriteLine(keyword);
-            Console.ReadKey();
+            Console.WriteLine("Total for your input is" + " " + total);
+
+            ////int[] numbers= new int[]{int.MaxValue};
+            ////int maximumNumber= numbers.Max();
+            ////Console.WriteLine("Highest number is" + " " + numbers.Max());
+            ////Console.ReadLine();
 
 
-         }
+            //int[] numbers = { 3, 9, 5 };
+            //int biggestNumber = numbers.Max();
+            //Console.WriteLine(biggestNumber);
+            //Console.ReadLine();
+
+        
+
+
+        }
     }
 }
