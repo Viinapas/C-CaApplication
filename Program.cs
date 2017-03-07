@@ -3,53 +3,63 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace CaNumber
+namespace CaNumber2
 {
     class Program
     {
         static void Main(string[] args)
         {
             //PV
-            // Write number. Input example 5 Output "Number 5 is positive"
+            // Write number. Input example 5 Output "Number 5 is uneven"
 
             float num = 0;
-            String keyword ;
+            string keyword= string.Empty ;
 
-            Console.WriteLine(" Give Number");
-            keyword=Console.ReadLine();
-            num = float.Parse(keyword);
+            Console.WriteLine(" Please give type number. ");
+            Console.WriteLine("Program check it is positive or nergative and even or unven");
+           
+            bool result =float.TryParse(Console.ReadLine(), out num);
 
-            if (num >0)
+
+
+            if (!result) 
             {
-              Console.WriteLine( "Number"+" "+  num + " is positive");
-                Console.ReadLine();
-                return;
-
-            
-            }
-
-            if (num >=0)
-            {
-                Console.WriteLine( " Number" +" "+num + " is ZERO and it is positive");
-                Console.ReadLine();
-                return;
-
+                keyword = ("It is not a number");
+              
             }
 
 
+            if (num > 0)
+            {
+                Console.WriteLine("Number" + " " + num + " is positive");
+                Console.ReadLine();
+               
+            }
+
+            else if( num % 2 ==0)
+            {
+                keyword = "Number is" + num.ToString() +"even number";
+               
+            }
 
             if (num < 0)
             {
                 Console.WriteLine("Number" + " " + num + " is negative");
                 Console.ReadLine();
-                return;
-
-
+                
             }
 
 
+            if (num % 2 == 1) 
+            {
+                keyword = "Number is" + num.ToString() + "uneven number";
+               
+            }
+
+            Console.WriteLine(keyword);
+            Console.ReadKey();
 
 
-        }
+         }
     }
 }
